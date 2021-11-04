@@ -356,7 +356,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1255062828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6551eef437317dd49b1b1ae9a176a092, type: 3}
+  m_Script: {fileID: 11500000, guid: d7cf4bdf2db621844bf53735cce13091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   monedas: 0
