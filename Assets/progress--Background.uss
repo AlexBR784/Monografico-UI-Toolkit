@@ -1,8 +1,3 @@
-.progressBar--overlay {
-    background-color: rgba(243, 19, 77, 255);
-}
-
-/* optional */
 .progressBar--background {
     border-left-color: rgba(103, 10, 10, 255);
     border-right-color: rgba(103, 10, 10, 255);

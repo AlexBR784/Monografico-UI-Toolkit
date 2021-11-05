@@ -1,6 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="ProgressBar.uss" />
-    <ui:VisualElement name="Background" class="progressBar--background" style="flex-grow: 1;">
-        <ui:VisualElement name="Overlay" class="progressBar--overlay" style="width: 50%; height: 100%;" />
-    </ui:VisualElement>
-</ui:UXML>
