@@ -32,3 +32,6 @@
     border-bottom-color: rgb(113, 107, 94);
     background-color: rgba(188, 128, 52, 0.46);
 }
+
+.progresBar--background {
+}

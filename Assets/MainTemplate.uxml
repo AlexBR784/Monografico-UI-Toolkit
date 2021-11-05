@@ -1,5 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="slot.uss" />
+    <Style src="progressBar.uss" />
     <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.77); cursor: url(&apos;/Assets/InventoryMaster/Textures/Ac_Gloves04.png&apos;);">
         <ui:VisualElement name="Top" style="flex-direction: row; width: 100%; height: 100px; max-height: 150px; min-height: 100px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 12px; padding-right: 12px; padding-top: 0; padding-bottom: 0; border-left-color: rgba(67, 44, 29, 0.89); border-right-color: rgba(67, 44, 29, 0.89); border-top-color: rgba(67, 44, 29, 0.89); border-bottom-color: rgba(67, 44, 29, 0.89); border-bottom-width: 1px; background-color: rgb(149, 149, 149); background-image: url(&apos;/Assets/InventoryMaster/Textures/Example Inventory/1/Hotbar_B.png&apos;); align-items: center;">
             <ui:Label text="Inventario" display-tooltip-when-elided="true" style="flex-grow: 0; align-items: auto; justify-content: flex-start; font-size: 50px; -unity-text-align: upper-center; -unity-font: url(&apos;/Assets/InventoryMaster/Fonts/FontinSans_Cyrillic_R_46b.otf&apos;); -unity-font-definition: none; padding-top: 0; color: rgb(226, 215, 199); padding-left: 12px;" />
@@ -9,15 +10,13 @@
             </ui:VisualElement>
             <ui:VisualElement name="Nivel" style="flex-grow: 1; flex-direction: row; justify-content: center; padding-top: 12px; -unity-text-align: upper-left; align-items: center;">
                 <ui:Label text="Nvl. 1" display-tooltip-when-elided="true" enable-rich-text="true" style="font-size: 50px; -unity-font: url(&apos;/Assets/InventoryMaster/Fonts/FontinSans_Cyrillic_R_46b.otf&apos;); -unity-font-definition: none; -unity-text-align: upper-center; padding-top: 0; color: rgb(227, 215, 200);" />
-                <ui:VisualElement name="Barra" style="padding-top: 0; font-size: 0;">
-                    <ui:VisualElement name="Borde_nivel" style="width: 250px; height: 20px; border-left-color: rgb(152, 108, 9); border-right-color: rgb(152, 108, 9); border-top-color: rgb(152, 108, 9); border-bottom-color: rgb(152, 108, 9); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px;">
-                        <ui:VisualElement name="Experiencia" style="width: 75%; height: 100%; background-color: rgb(219, 182, 22);" />
-                    </ui:VisualElement>
+                <ui:VisualElement class="progressBar--background" style="width: 230px; height: 27px;">
+                    <ui:VisualElement class="progressBar--overlay" style="height: 100%; width: 220px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Body" style="flex-grow: 1; flex-direction: row; padding-left: 12px; padding-right: 12px; padding-top: 12px; padding-bottom: 12px; justify-content: flex-start; align-items: flex-start; background-image: url(&apos;/Assets/InventoryMaster/Textures/Example Inventory/1/Panel5.png&apos;); background-color: rgba(144, 105, 66, 0.56);">
-            <ui:VisualElement name="Personaje" style="width: 25%; align-items: auto; flex-direction: row; flex-grow: 1; flex-shrink: 1; justify-content: flex-start; flex-wrap: nowrap; height: 100%; background-image: url(&apos;/Assets/InventoryMaster/Textures/Example Inventory/1/Panel4b_neu.png&apos;);" />
+            <ui:VisualElement name="Personaje" style="width: 25%; align-items: auto; flex-direction: row; flex-grow: 1; flex-shrink: 1; justify-content: flex-start; flex-wrap: nowrap; height: 100%; background-image: url(&apos;/Assets/InventoryMaster/Textures/Example Inventory/1/Panel4b_neu.png&apos;); display: flex;" />
             <ui:VisualElement name="Inventario" style="flex-grow: 1; width: 75%; height: 100%; justify-content: center; align-items: center; margin-right: 0; margin-left: 0; padding-left: 20px; padding-right: 20px;">
                 <ui:VisualElement name="SlotsGrid" style="flex-direction: row; flex-wrap: wrap; height: 900px; margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px; padding-top: 10px;">
                     <ui:VisualElement name="Slot" class="slot" style="margin-right: 10px; margin-bottom: 10px; align-items: center; justify-content: center; flex-direction: row; cursor: url(&apos;/Assets/InventoryMaster/Textures/Ac_Gloves04.png&apos;);">
@@ -47,7 +46,7 @@
                     <ui:VisualElement name="Slot" class="slot" style="margin-right: 10px;" />
                     <ui:VisualElement name="Slot" class="slot" style="margin-right: 10px;" />
                     <ui:VisualElement name="Panel-edicion" style="height: 108px; width: 745px; position: absolute; top: 342px; left: 4px; background-color: rgba(188, 174, 174, 0.36);">
-                        <ui:Button text="+1 Moneda" display-tooltip-when-elided="true" name="AddCoin" class="button" style="background-color: rgba(168, 120, 55, 255);" />
+                        <ui:Button text="+1 Moneda" display-tooltip-when-elided="true" name="AddCoin" class="button" style="background-color: rgb(168, 120, 55);" />
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
